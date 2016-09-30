@@ -29,4 +29,4 @@ Note
 
 License
 -----------------------------------
-  DDPhotoAlbum is released under the MIT license.<br />
+  DDDebugView is released under the MIT license.<br />
