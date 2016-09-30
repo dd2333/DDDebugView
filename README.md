@@ -19,7 +19,7 @@ Usage
     
     #ifdef DEBUG
     + (void)load{
-        [UIWindow hookWithSupportShowTouchFrame:YES];
+        [UIWindow hookWithPrintLog:YES];
     }
     #endif
     
