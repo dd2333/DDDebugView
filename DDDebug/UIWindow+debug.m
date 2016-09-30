@@ -19,11 +19,11 @@
 @implementation UIWindow (debug)
 
 static void (*__sendEvent)( id, SEL, UIEvent * );
-static BOOL __isSupportShowTouchFrame = NO;
+static BOOL __isPrint = NO;
 
-+ (void)hookWithSupportShowTouchFrame:(BOOL)isSupport{
++ (void)hookWithPrintLog:(BOOL)isPrint{
     static BOOL __swizzled = NO;
-    __isSupportShowTouchFrame = isSupport;
+    __isPrint = isPrint;
     if ( NO == __swizzled )
     {
         Method method;
@@ -58,7 +58,7 @@ static BOOL __isSupportShowTouchFrame = NO;
                         
                         DDDebugBorderView * borderView = [DDDebugBorderView new];
                         borderView.frame = touch.view.bounds;
-                        if (__isSupportShowTouchFrame) {
+                        if (__isPrint) {
                             NSLog(@"\n%@\n\n%@", [UIWindow getPresentedViewController],touch.view);
                         }
                         [touch.view addSubview:borderView];

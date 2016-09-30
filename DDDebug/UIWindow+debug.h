@@ -10,6 +10,6 @@
 
 @interface UIWindow (debug)
 
-+ (void)hookWithSupportShowTouchFrame:(BOOL)isSupport;
++ (void)hookWithPrintLog:(BOOL)isPrint;
 
 @end
