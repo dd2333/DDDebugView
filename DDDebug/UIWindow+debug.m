@@ -30,7 +30,7 @@ static BOOL __isPrint = NO;
         IMP implement;
         
         method = class_getInstanceMethod( [UIWindow class], @selector(sendEvent:) );
-        __sendEvent = (void *)method_getImplementation( method );
+        __sendEvent = (void (*)( id, SEL, UIEvent * ))method_getImplementation( method );
         
         implement = class_getMethodImplementation( [UIWindow class], @selector(ddSendEvent:) );
         method_setImplementation( method, implement );
